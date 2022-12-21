@@ -1,6 +1,11 @@
+
+import {utilsSrevice} from './utils.service'
+
+
 export const locService = {
     getLocs
 }
+
 
 
 const locs = [

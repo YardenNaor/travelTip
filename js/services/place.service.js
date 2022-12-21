@@ -1,0 +1,5 @@
+
+
+function setPlace(cord){
+
+}

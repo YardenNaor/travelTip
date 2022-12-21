@@ -1,3 +1,5 @@
+import {placeService} from './place.service'
+
 export const mapService = {
     initMap,
     addMarker,
@@ -5,7 +7,7 @@ export const mapService = {
 }
 
 
-'AIzaSyB290p39EKaiSA_DpnOx2p0E5jvEcrW1Aw'
+// 'AIzaSyB290p39EKaiSA_DpnOx2p0E5jvEcrW1Aw'
 
 
 // Var that is used throughout this Module (not global)
@@ -41,19 +43,11 @@ function onMapClicked() {
         // const name = prompt('Enter name')
         const cord = mapsMouseEvent.latLng.toJSON()
         console.log('cord:', cord)
-        const place = {
-            id: getRandomId(),
-            name: setName()  ,
-            lat: cord.lat,
-            lng: cord.lng,
-            weather: getWeather(),
-            createdAt: Date.now,
-            updatedAt: UpdateTime()
-        }
+        placeService.setPlace(cord)
     })
 
-// addMarker(cord)
-// savePlace(place)
+    // addMarker(cord)
+    // savePlace(place)
     // renderPlaces()
 }
 
